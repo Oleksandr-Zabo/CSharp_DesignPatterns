@@ -1,4 +1,4 @@
-﻿using Patterns_1.FabricMethod;
+﻿using Patterns_1.AbstractFactory;
 
 namespace c_sharp_design_pattern{
     class Program 

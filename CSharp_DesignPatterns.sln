@@ -6,6 +6,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns_1", "Patterns_1", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FabricMethod", "FabricMethod\FabricMethod.csproj", "{306BE0C0-272E-4007-A67A-C79716FF0343}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactory", "AbstractFactory\AbstractFactory.csproj", "{14E3DD6E-0AA0-4843-87C7-20C9586524DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +22,13 @@ Global
 		{306BE0C0-272E-4007-A67A-C79716FF0343}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{306BE0C0-272E-4007-A67A-C79716FF0343}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{306BE0C0-272E-4007-A67A-C79716FF0343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14E3DD6E-0AA0-4843-87C7-20C9586524DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14E3DD6E-0AA0-4843-87C7-20C9586524DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14E3DD6E-0AA0-4843-87C7-20C9586524DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14E3DD6E-0AA0-4843-87C7-20C9586524DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{306BE0C0-272E-4007-A67A-C79716FF0343} = {923751F2-1F4A-496A-B748-CB2855C8B439}
+		{14E3DD6E-0AA0-4843-87C7-20C9586524DC} = {923751F2-1F4A-496A-B748-CB2855C8B439}
 	EndGlobalSection
 EndGlobal
