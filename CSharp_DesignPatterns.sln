@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FabricMethod", "FabricMetho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactory", "AbstractFactory\AbstractFactory.csproj", "{14E3DD6E-0AA0-4843-87C7-20C9586524DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Builder", "Builder\Builder.csproj", "{2BAC64E5-8E99-4406-AB4A-49A5F8B3D5CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +28,14 @@ Global
 		{14E3DD6E-0AA0-4843-87C7-20C9586524DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14E3DD6E-0AA0-4843-87C7-20C9586524DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14E3DD6E-0AA0-4843-87C7-20C9586524DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BAC64E5-8E99-4406-AB4A-49A5F8B3D5CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BAC64E5-8E99-4406-AB4A-49A5F8B3D5CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BAC64E5-8E99-4406-AB4A-49A5F8B3D5CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BAC64E5-8E99-4406-AB4A-49A5F8B3D5CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{306BE0C0-272E-4007-A67A-C79716FF0343} = {923751F2-1F4A-496A-B748-CB2855C8B439}
 		{14E3DD6E-0AA0-4843-87C7-20C9586524DC} = {923751F2-1F4A-496A-B748-CB2855C8B439}
+		{2BAC64E5-8E99-4406-AB4A-49A5F8B3D5CC} = {923751F2-1F4A-496A-B748-CB2855C8B439}
 	EndGlobalSection
 EndGlobal

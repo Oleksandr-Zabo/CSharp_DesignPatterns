@@ -1,6 +1,6 @@
-﻿using Patterns_1.AbstractFactory;
+﻿using Patterns_1.Builder;
 
-namespace c_sharp_design_pattern{
+namespace CSharp_DesignPatterns{
     class Program 
     {
         static void Main()
