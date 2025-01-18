@@ -1,4 +1,4 @@
-﻿using Patterns_2.Adapter_Bridge;
+﻿using Patterns_2.Composite;
 
 namespace CSharp_DesignPatterns{
     class Program 
