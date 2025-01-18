@@ -11,6 +11,7 @@
       <ProjectReference Include="..\AbstractFactory\AbstractFactory.csproj" />
       <ProjectReference Include="..\Builder\Builder.csproj" />
       <ProjectReference Include="..\FabricMethod\FabricMethod.csproj" />
+      <ProjectReference Include="..\Patterns_2\Patterns_2.csproj" />
     </ItemGroup>
 
 </Project>
