@@ -1,4 +1,4 @@
-﻿using Patterns_2.Decorator;
+﻿using Patterns_2.FlyWeight;
 
 namespace CSharp_DesignPatterns{
     class Program 
@@ -7,7 +7,6 @@ namespace CSharp_DesignPatterns{
         {
             ClientCode client = new ClientCode();
             client.Main();
-
         }
     }
 }
