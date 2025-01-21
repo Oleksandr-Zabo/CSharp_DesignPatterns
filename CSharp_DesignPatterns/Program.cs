@@ -1,4 +1,4 @@
-﻿using Patterns_2.Composite;
+﻿using Patterns_2.Decorator;
 
 namespace CSharp_DesignPatterns{
     class Program 
