@@ -1,5 +1,4 @@
-﻿using Patterns_3.CoR_Action;
-
+﻿using Patterns_3.Iterator;
 namespace CSharp_DesignPatterns{
     class Program 
     {
