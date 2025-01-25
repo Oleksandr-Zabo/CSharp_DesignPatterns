@@ -1,4 +1,4 @@
-﻿using Patterns_2.FlyWeight;
+﻿using Patterns_3.CoR_Action;
 
 namespace CSharp_DesignPatterns{
     class Program 
