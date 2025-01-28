@@ -1,74 +1,87 @@
-﻿namespace Patterns_3.Mediator_Memento;
-
-// BankAccount class represents a user's bank account.
-public class BankAccount
+﻿namespace Patterns_3.Mediator_Memento
 {
-    public string Owner { get; private set; }
-    public decimal Balance { get; private set; }
-
-    // List to store all snapshots
-    private List<AccountMemento> _history = new List<AccountMemento>();
-
-    public BankAccount(string owner, decimal initialBalance)
+    // BankAccount class represents a user's bank account.
+    public class BankAccount
     {
-        Owner = owner;
-        Balance = initialBalance;
-        SaveState(); // Save initial state.
-    }
+        public string Owner { get; private set; }
+        public decimal Balance { get; private set; }
 
-    // Deposit money into the account.
-    public void Deposit(decimal amount)
-    {
-        Balance += amount;
-        SaveState(); 
-    }
+        // List to store all snapshots.
+        private List<AccountMemento> _history = new List<AccountMemento>();
 
-    // Withdraw money from the account.
-    public void Withdraw(decimal amount)
-    {
-        if (amount > Balance)
+        public BankAccount(string owner, decimal initialBalance)
         {
-            throw new InvalidOperationException("Insufficient funds.");
+            Owner = owner;
+            Balance = initialBalance;
+            SaveState(); // Save initial state.
         }
-        Balance -= amount;
-        SaveState(); 
-    }
 
-    // Transfer money to another account.
-    public void Transfer(BankAccount targetAccount, decimal amount)
-    {
-        if (amount > Balance)
+        // Deposit money into the account.
+        public void Deposit(decimal amount)
         {
-            throw new InvalidOperationException("Insufficient funds.");
+            Balance += amount;
+            SaveState();
         }
-        Withdraw(amount);
-        targetAccount.Deposit(amount);
-        SaveState(); 
-    }
 
-    // Memento Pattern: Save the current state of the account.
-    public AccountMemento SaveState()
-    {
-        var memento = new AccountMemento(Balance);
-        _history.Add(memento); // Add to history
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine($"State saved for {Owner}'s account. Balance: {Balance}");
-        Console.ResetColor();
-        return memento;
-    }
+        // Withdraw money from the account.
+        public void Withdraw(decimal amount)
+        {
+            if (amount > Balance)
+            {
+                throw new InvalidOperationException("Insufficient funds.");
+            }
+            Balance -= amount;
+            SaveState();
+        }
 
-    // Memento Pattern: Restore the account to a previous state.
-    public void RestoreState(AccountMemento memento)
-    {
-        Balance = memento.Balance;
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine($"State restored for {Owner}'s account. Balance: {Balance}");
-        Console.ResetColor();
-    }
+        // Transfer money to another account.
+        public void Transfer(BankAccount targetAccount, decimal amount)
+        {
+            if (amount > Balance)
+            {
+                throw new InvalidOperationException("Insufficient funds.");
+            }
+            Withdraw(amount);
+            targetAccount.Deposit(amount);
+            SaveState();
+        }
 
-    // Display account information.
-    public override string ToString()
-    {
-        return $"{Owner}'s account balance: {Balance}";
+        // Memento Pattern: Save the current state of the account.
+        public AccountMemento SaveState()
+        {
+            var memento = new AccountMemento(Owner, Balance);
+            _history.Add(memento); // Add to history.
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"[Memento] State saved for {Owner}'s account. Balance: {Balance}");
+            Console.ResetColor();
+            return memento;
+        }
+
+        // Memento Pattern: Restore the account to a previous state.
+        public void RestoreState(AccountMemento memento)
+        {
+            Balance = memento.Balance;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"[Memento] State restored for {Owner}'s account. Balance: {Balance}");
+            Console.ResetColor();
+        }
+
+        // Display account information.
+        public override string ToString()
+        {
+            return $"{Owner}'s account balance: {Balance}";
+        }
+
+        // Display all saved snapshots.
+        public void DisplayHistory()
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine($"[Memento] History of snapshots for {Owner}'s account:");
+            foreach (var memento in _history)
+            {
+                memento.DisplayDetails();
+            }
+            Console.ResetColor();
+        }
     }
 }
