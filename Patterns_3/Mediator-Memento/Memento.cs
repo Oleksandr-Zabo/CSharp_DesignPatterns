@@ -1,26 +1,47 @@
 ﻿namespace Patterns_3.Mediator_Memento
 {
-    // Memento Pattern: Represents a snapshot of the bank account state.
-    public class AccountMemento
+    // Interface for Memento
+    public interface IMemento
     {
-        public decimal Balance { get; private set; }
-        public DateTime SnapshotDate { get; private set; }
-        public string Owner { get; private set; }
+        void SaveState(decimal balance);
+        decimal RestoreState();
+        void DisplayHistory();
+    }
 
-        public AccountMemento(string owner, decimal balance)
+    // Memento class to save and restore BankAccount state
+    public class Memento : IMemento
+    {
+        private readonly string _owner;
+        private readonly List<decimal> _balanceHistory;
+
+        public Memento(string owner, decimal initialBalance)
         {
-            Owner = owner;
-            Balance = balance;
-            SnapshotDate = DateTime.Now;
+            _owner = owner;
+            _balanceHistory = new List<decimal> { initialBalance };
         }
 
-        // Display memento details.
-        public void DisplayDetails()
+        public void SaveState(decimal balance)
+        {
+            _balanceHistory.Add(balance);
+        }
+
+        public decimal RestoreState()
+        {
+            if (_balanceHistory.Count > 0)
+            {
+                return _balanceHistory.Last();
+            }
+            throw new InvalidOperationException("No state to restore.");
+        }
+
+        public void DisplayHistory()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"[Memento] Snapshot for {Owner}'s account:");
-            Console.WriteLine($"Balance: {Balance}");
-            Console.WriteLine($"Date: {SnapshotDate}");
+            Console.WriteLine($"{_owner}'s balance history:");
+            foreach (var balance in _balanceHistory)
+            {
+                Console.WriteLine(balance);
+            }
             Console.ResetColor();
         }
     }

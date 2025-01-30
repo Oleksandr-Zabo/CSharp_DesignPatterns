@@ -27,11 +27,7 @@
             Console.WriteLine(account1);
 
             // Restore Alice's account to the previous state using Memento.
-            var aliceMemento = account1.SaveState(); // Save current state.
-            account1.Withdraw(200); // Perform another operation.
-            Console.WriteLine(account1);
-
-            account1.RestoreState(aliceMemento); // Restore to the saved state.
+            account1.RestoreState(); // Restore to the last saved state.
             Console.WriteLine(account1);
 
             // Display history of snapshots for Alice's account.
