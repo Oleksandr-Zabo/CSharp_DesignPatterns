@@ -1,4 +1,4 @@
-﻿using Patterns_3.Mediator_Memento;
+﻿using Patterns_3.State;
 namespace CSharp_DesignPatterns{
     class Program 
     {
