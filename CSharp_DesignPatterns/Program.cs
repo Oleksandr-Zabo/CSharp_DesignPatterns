@@ -1,4 +1,4 @@
-﻿using Patterns_3.State;
+﻿using Patterns_3.Strategy;
 namespace CSharp_DesignPatterns{
     class Program 
     {
