@@ -1,4 +1,4 @@
-﻿using Patterns_3.Strategy;
+﻿using Patterns_3.Visitor_TemplateMethod;
 namespace CSharp_DesignPatterns{
     class Program 
     {
