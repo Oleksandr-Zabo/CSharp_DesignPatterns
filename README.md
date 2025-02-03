@@ -1,5 +1,3 @@
-Here is the updated draft for your README file, including links to use the repository:
-
 ---
 
 # CSharp_DesignPatterns
